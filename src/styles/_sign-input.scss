@@ -1,0 +1,16 @@
+@import '../styles/variables';
+input {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $secondary-color;
+    padding: 10px 17px;
+    width: 100%;
+    outline: none;
+    font-size: $font-size-m;
+    color: $white;
+    margin: 10px 0;
+    &:active {
+        outline: none;
+    }
+}

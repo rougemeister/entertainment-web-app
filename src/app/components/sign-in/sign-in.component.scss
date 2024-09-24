@@ -1,0 +1,37 @@
+@use '../../../styles/heading' as *;
+@use '../../../styles/buttons' as *;
+@use'../../../styles/_variables.scss';
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/_sign-input.scss';
+@import '../../../styles/_para-align-center';
+
+
+
+.signin-wrapper{
+    @include flex-column;
+    height: 100vh;
+    background-color: $primary-color;
+    display: flex;
+    
+}
+
+form {
+    @include flex-column;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 24px;
+    background-color: $primary-dark-alt;
+    border-radius: 4px;
+    width: 327px;
+    border-radius: 10px;
+    gap: 20px;
+    color: $white;
+    p {
+        margin-bottom: 24px;
+    }
+    a {
+        color: $accent;
+        text-decoration: none;
+    }
+}
