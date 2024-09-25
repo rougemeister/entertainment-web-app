@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import './styles/variables.scss';
 
 
 * {
@@ -14,6 +15,14 @@ img {
 
 body {
     font-family: "Outfit", sans-serif;
+    background-color: $primary-color;
+}
+
+input {
+    font-family: inherit;
+    display: block;
+    background-color: transparent;
+    color: white;
 }
 
 
