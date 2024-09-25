@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+nav {
+    background-color: $primary-dark-alt;
+    height: 56px;
+    padding: 15px 20px;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        img {
+            height: 25px;
+        }
+    }
+  
+    .nav-img {
+        display: flex;
+        gap: 18px;
+        img {
+            height: 16px;
+        }
+    }
+    .profile-img {
+        width: 24px;
+        height: 24px;
+        border: 1px solid $white;
+        border-radius: 50px;
+    }
+}

@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
-constructor(private router: Router) {}
-navigateToSignIn() {    
-this.router.navigate(['/sign-in']);
-}
+  constructor(private router: Router) {}
+  navigateToSignIn() {    
+  this.router.navigate(['/sign-in']);
+  }
 }
