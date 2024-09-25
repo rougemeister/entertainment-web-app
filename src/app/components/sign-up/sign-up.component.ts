@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss'
 })
 export class SignUpComponent {
-
+constructor(private router: Router) {}
+navigateToSignIn() {    
+this.router.navigate(['/sign-in']);
+}
 }
