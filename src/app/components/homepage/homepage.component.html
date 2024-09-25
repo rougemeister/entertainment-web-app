@@ -1,10 +1,40 @@
 <div class="main-page">
     <app-nav-bar></app-nav-bar>
     <div class="content">
-        <div class="search">
-            <img src="../../../assets/icon-search.svg" alt="">
-            <input type="text" placeholder="Search for movies or TV series">
-        </div>
-
+      <div class="search">
+        <img src="assets/icon-search.svg" alt="Search icon">
+        <input type="text" placeholder="Search for movies or TV series">
+      </div>
+   
+  
+    <div class="trending">
+      <h2 class="heading-s">Trending</h2>
+      <div class="trending-items">
+        <ng-container *ngFor="let item of trendingItems">
+          <div class="trending-item">
+            <img [src]="getItemImage(item)" [alt]="item.title">
+            <div class="item-info">
+              <p>{{ item.year }} • {{ item.category }} • {{ item.rating }}</p>
+              <h3>{{ item.title }}</h3>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  
+    <div class="recommended">
+      <h2 class="heading-s">Recommended for you</h2>
+      <div class="recommended-items">
+        <ng-container *ngFor="let item of mediaItems">
+          <div class="recommended-item" *ngIf="!item.isTrending">
+            <img [src]="getItemImage(item)" [alt]="item.title">
+            <div class="item-info">
+              <p>{{ item.year }} • {{ item.category }} • {{ item.rating }}</p>
+              <h4>{{ item.title }}</h4>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
 </div>
+  </div>
