@@ -32,7 +32,7 @@ export class HomepageComponent implements OnInit {
     } else if (item.thumbnail?.regular?.large) {
       return item.thumbnail.regular.large;
     } else {
-      return 'assets/fallback-image.jpg'; // Make sure this path is correct
+      return '';
     }
   }
 }

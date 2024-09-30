@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
   constructor(private router: Router) {}
+
   navigateToSignIn() {    
   this.router.navigate(['/sign-in']);
   }
+
+  
 }

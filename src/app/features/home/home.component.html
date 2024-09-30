@@ -1,0 +1,40 @@
+<section class="home">
+  <section class="content">
+    <app-search-bar />
+    <!-- MEDIA LOADING -->
+
+    @if(mediaLoading$ | async; as mediaLoading) {
+    <div class="loading-container">
+      <div class="loader2"></div>
+    </div>
+    } @else { @if(filteredMedia$ | async; as filteredMediaItems ) {
+    <div class="media-list">
+      <!-- Trending Section -->
+      <div class="trending">
+        <h1>Trending</h1>
+        <div class="trending-list">
+          @for(media of filteredMediaItems; track media) { @if(media.isTrending)
+          {
+          <app-card [media]="media" [isTrending]="true" />
+
+          } }
+        </div>
+      </div>
+      <!-- Trending Section ends -->
+
+      <!-- Recommended for you  -->
+      <div class="recommended">
+        <h1>Recommended for you</h1>
+        <div class="recommended-list custom-grid">
+          @for(media of filteredMediaItems; track media) {
+
+          <app-card [media]="media" />
+
+          }
+        </div>
+      </div>
+      <!-- Recommended for you ends -->
+    </div>
+    } }
+  </section>
+</section>

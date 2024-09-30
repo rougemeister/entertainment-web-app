@@ -32,6 +32,8 @@
     overflow-x: auto;
     gap: 12px;
     margin: 1.5rem 0;
+    height: 140px;
+    
     
     // Hide scrollbar for Chrome, Safari and Opera
     &::-webkit-scrollbar {
@@ -45,10 +47,29 @@
     .trending-item {
       flex-shrink: 0;
       width: 240px;
+      position: relative;
+      .bookmark {
+        background-color: rgba(0, 0, 0, 0.425);
+        height: 32px;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        position: absolute;
+        bottom: 90px;
+        left: 11rem;
+      }
+     
       img {
         width: 100%;
-        height: auto;
+        height: 100%;
       }
+      .item-info {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        }
     }
   }
 
@@ -67,3 +88,5 @@
         height: auto;
     }
 }
+
+

@@ -17,3 +17,9 @@ export interface MediaItem {
     isBookmarked: boolean;
     isTrending: boolean;
   }
+
+  export interface MediaState {
+    items: MediaItem[];
+    category: string;
+    loading: boolean;
+  }

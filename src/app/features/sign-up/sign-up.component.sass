@@ -1,0 +1,74 @@
+@use '../../../styles/_variables.sass' as *
+@use '../../../styles/_mixins.sass' as *
+@use '../../../styles/_functions.sass' as *
+
+
+
+
+.text-warning
+    margin-top: .5rem
+
+input
+    background: $bg-accent
+    width: 100%
+    box-sizing: border-box
+    padding: 1rem
+    box-shadow: none
+    border: none
+    outline: none
+    color: $text 
+    caret-color: $clr-red
+    border-bottom: solid 1px  $greyish-blue
+    font-weight: 300
+    transition: .25s ease
+    font-size: get-font-size(header, 'sm')
+
+    &:focus
+        border-color: white
+
+section 
+    width: 100%
+    +breakpoint(medium)
+        width: 500px
+
+form 
+    background: $bg-accent
+    padding: 2rem
+    border-radius: 10px
+    max-width: 500px
+    // margin-inline: auto
+    // margin-bottom: 1rem
+    +flex($direction: column, $gap: 1.5rem)
+
+    h1
+        text-transform: capitalize
+        margin-bottom: 1rem
+
+    button
+        width: 100%
+        height: 60px
+        border-radius: 10px
+        border: none
+        outline: none
+        background: $clr-red
+        color: $text
+        font-weight: 300
+        font-size: get-font-size(header, 'sm')
+        transition: .25s ease
+        cursor: pointer
+
+        &:hover
+            background: $text
+            color: $clr-red
+
+            .loader 
+                --_g: no-repeat radial-gradient(circle closest-side,#000000 90%,#ffffff00) !important
+
+    
+    p
+        text-align: center
+
+        .link 
+            color: $clr-red
+            text-decoration: none
+            cursor: pointer

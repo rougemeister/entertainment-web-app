@@ -10,6 +10,7 @@ export class DataService {
   private dataUrl = '../assets/data/data.json'
 
   constructor(private http: HttpClient) { }
+
   getAllMediaItems(): Observable<MediaItem[]> {
     return this.http.get<MediaItem[]>(this.dataUrl);
   }

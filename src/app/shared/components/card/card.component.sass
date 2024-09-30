@@ -1,0 +1,185 @@
+@use '../../../../styles/_mixins.sass' as *
+@use '../../../../styles/_variables.sass' as *
+@use '../../../../styles/_functions.sass' as *
+
+img
+    transition: .3s ease
+
+.bookmark-btn 
+    +flex-center()
+    border: none
+    outline: none 
+    background:#10141e57
+
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    position: absolute
+    top: 10px
+    right: 15px
+    cursor: pointer
+    transition: .3s ease
+    z-index: 2000
+
+    &:hover
+        background: white
+
+        svg
+            path 
+                stroke: black
+.isBookmarked
+    // background: red
+    svg 
+        path 
+            fill: white
+    
+.overlay 
+    @include flex-center()
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: #00000057
+    opacity: 0
+    pointer-events: none
+    transition: .2s ease
+    z-index: 1000
+
+    
+    .play-btn
+        +flex($direction: row, $gap: 1rem)
+        background: #ffffff40
+        color: white
+        font-weight: 400
+        font-size: get-font-size(header, sm)
+        padding: .5rem
+        padding-right: 1rem
+        border-radius: 2rem
+        border: none
+        outline: none
+        cursor: pointer
+        opacity: 0
+        pointer-events: none
+        transform: scale(.85)
+        transition: .4s ease
+
+.trending-card
+    border-radius: 10px
+    width: 350px
+    height: 200px
+    // padding: 1rem
+    overflow: hidden
+    position: relative
+
+    &:hover
+        .overlay
+            opacity: 1
+            pointer-events: initial
+
+            .play-btn
+                opacity: 1
+                transform: scale(1)
+                pointer-events: initial
+
+    
+        .bookmark-btn:hover ~ .overlay
+            opacity: 0
+            pointer-events: none
+
+        img 
+            transform: scale(1.05)
+
+    +breakpoint(small) 
+        width: 500px
+        height: 250px
+
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    .card-body
+        padding: 1rem
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.75) 100%)
+        backdrop-filter: blur(1px)
+        +flex-between($direction: row, $gap: .5rem)
+
+        .detail
+            .year-and-category
+                +flex($direction: row, $gap: .5rem)
+                color: $text-secondary
+
+                span
+                    font-size: 13px
+                    +breakpoint(medium) 
+                        font-size: 15px
+                .category 
+                    +flex($direction: row, $gap: .5rem)
+                    img
+                        width: 12px
+                        width: 12px
+
+      
+
+
+
+.regular-card 
+    border-radius: 10px
+    +flex($direction: column, $gap: .5rem)
+    position: relative
+
+
+
+    .card-img
+        width: 100%
+        height: 140px
+        border-radius: 10px
+        overflow: hidden
+        position: relative        
+        
+        +breakpoint(small) 
+            height: 180px
+
+        &:hover
+            img
+                transform: scale(1.05)
+        img
+            width: 100%
+            height: 100%
+            // border-radius: 10px
+            object-fit: cover
+
+        &:hover
+            .overlay
+                opacity: 1
+                pointer-events: initial
+
+                .play-btn
+                    opacity: 1
+                    transform: scale(1)
+                    pointer-events: initial
+            
+            
+    .card-body
+        .detail 
+            +flex($direction: column, $gap: .3rem)
+
+            .year-and-category
+                +flex($direction: row, $gap: .5rem)
+                color: $text-secondary
+
+                span
+                    font-size: 13px
+                    +breakpoint(medium) 
+                        font-size: 15px
+
+                .category 
+                    +flex($direction: row, $gap: .5rem)
+                    img
+                        width: 12px
+                        width: 12px

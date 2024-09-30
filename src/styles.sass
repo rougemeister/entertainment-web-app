@@ -1,0 +1,130 @@
+@use './styles/mixins' as *
+@use './styles/functions' as *
+@use './styles/variables' as *
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: $ff-outfit
+
+
+body 
+  background: $background
+  color: $text
+
+
+h1
+  font-size: get-font-size(header, 'md')
+  font-weight: 400
+  @include breakpoint(medium)
+    font-size: get-font-size(header, 'lg')
+
+
+h3
+  font-size: get-font-size(body, 'lg')
+  font-weight: 400
+  @include breakpoint(medium)
+    font-size: get-font-size(header, 'md')
+
+
+p
+  font-size: get-font-size(body, 'md')
+  @include breakpoint(medium)
+    font-size: get-font-size(body, 'lg')
+
+.custom-grid
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 1.2rem
+
+  +breakpoint(medium)
+      grid-template-columns: repeat(3, 1fr)
+      gap: 1.5rem
+      
+
+  +breakpoint(large)
+      grid-template-columns: repeat(4, 1fr)
+      // gap: 2rem
+
+.text-warning
+  color: $clr-red
+.text-secondary
+  color: $text-secondary
+
+
+.loader 
+  margin-inline: auto
+  width: 35px
+  aspect-ratio: 2
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#ffffff00)
+  background: var(--_g) 0%   50%,var(--_g) 50%  50%,var(--_g) 100% 50%
+  background-size: calc(100%/3) 50%
+  animation: l3 1s infinite linear
+
+@keyframes l3 
+    20%
+      background-position:0%   0%, 50%  50%,100%  50%
+    40%
+      background-position:0% 100%, 50%   0%,100%  50%
+    60%
+      background-position:0%  50%, 50% 100%,100%   0%
+    80%
+      background-position:0%  50%, 50%  50%,100% 100%
+
+
+.loader2
+  width: 65px
+  aspect-ratio: 1
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    border-radius: 50px
+    box-shadow: 0 0 0 3px inset #fff
+    animation: l4 2.5s infinite
+
+  &:after
+    content: ""
+    position: absolute
+    border-radius: 50px
+    box-shadow: 0 0 0 3px inset #fff
+    animation: l4 2.5s infinite
+    animation-delay: -1.25s
+
+@keyframes l4
+  0%
+    inset: 0 35px 35px 0
+
+  12.5%
+    inset: 0 35px 0 0
+
+  25%
+    inset: 35px 35px 0 0
+
+  37.5%
+    inset: 35px 0 0 0
+
+  50%
+    inset: 35px 0 0 35px
+
+  62.5%
+    inset: 0 0 0 35px
+
+  75%
+    inset: 0 0 35px 35px
+
+  87.5%
+    inset: 0 0 35px 0
+
+  100%
+    inset: 0 35px 35px 0
+
+
+
+.loading-container 
+  +flex-center()
+  height: 80vh
+  width: 100%
